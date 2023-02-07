@@ -30,6 +30,8 @@ docker run \
   -e TF_VAR_aws_access_key_id=<YOUR_ACCESS_KEY_ID> \
   -e TF_VAR_aws_secret_access_key=<YOUR_SECRET_ACCESS_KEY> \
   -e TF_VAR_aws_region=us-east-2 \
+  -e TF_VAR_aiven_api_token=<YOUR_AIVEN_API_TOKEN> \
+  -e TF_VAR_aiven_project_name=<YOUR_AIVEN_PROJECT_NAME> \
   -it --entrypoint /bin/sh pg-aiven \
   -c "terraform plan && terraform apply -auto-approve && terraform output -json"
 ```
@@ -41,6 +43,8 @@ docker run \
   -e TF_VAR_aws_access_key_id=<YOUR_ACCESS_KEY_ID> \
   -e TF_VAR_aws_secret_access_key=<YOUR_SECRET_ACCESS_KEY> \
   -e TF_VAR_aws_region=us-east-2 \
+  -e TF_VAR_aiven_api_token=<YOUR_AIVEN_API_TOKEN> \
+  -e TF_VAR_aiven_project_name=<YOUR_AIVEN_PROJECT_NAME> \
   -it --entrypoint /bin/sh pg-aiven \
   -c "terraform plan && terraform destroy -auto-approve"
 ```
@@ -56,7 +60,8 @@ docker run \
   - `TF_VAR_aws_secret_access_key`: your AWS S3 secret access key
   - `TF_VAR_aws_region`: your AWS S3 region
   - `TF_VAR_qovery_environment_id`: your Qovery environment ID (you can put a random alphanumeric value for local testing)
+  - `TF_VAR_aiven_api_token`: your Aiven API token
   - `TF_VAR_aiven_project_name`: your Aiven project name
 5. Set the following command:
-  - To deploy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform apply -auto-approve && terraform output -json > /qovery-output/qovery-output.json"]`
-  - To destroy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform destroy -auto-approve"]`
+  - To deploy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform apply -auto-approve -no-color && terraform output -json > /qovery-output/qovery-output.json"]`
+  - To destroy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform destroy -auto-approve -no-color"]`
