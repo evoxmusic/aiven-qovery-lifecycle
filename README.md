@@ -23,7 +23,7 @@ docker build \
   \ -t pg-aiven .
 ```
 
-### To deploy your RDS instance
+### To deploy your Aiven PostgreSQL instance
 
 ```shell
 docker run \
@@ -34,7 +34,7 @@ docker run \
   -c "terraform plan && terraform apply -auto-approve && terraform output -json"
 ```
 
-### To destroy your RDS instance
+### To destroy your Aiven PostgreSQL instance
 
 ```shell
 docker run \
