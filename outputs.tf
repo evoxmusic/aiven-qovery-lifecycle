@@ -5,7 +5,7 @@ output "postgres_host" {
 
 output "postgres_port" {
   description = "The Aiven PG connection port"
-  value       = aiven_pg.pg_instance.service_port
+  value       = tostring(aiven_pg.pg_instance.service_port)
 }
 
 output "postgres_user" {

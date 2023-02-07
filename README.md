@@ -63,5 +63,5 @@ docker run \
   - `TF_VAR_aiven_api_token`: your Aiven API token
   - `TF_VAR_aiven_project_name`: your Aiven project name
 5. Set the following command:
-  - To deploy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform apply -auto-approve -no-color && terraform output -json > /qovery-output/qovery-output.json"]`
-  - To destroy your Aiven PostgreSQL instance: `["-c", "terraform plan && terraform destroy -auto-approve -no-color"]`
+  - To deploy your Aiven PostgreSQL instance: `["-c", "terraform apply -auto-approve -no-color && terraform output -json > /qovery-output/qovery-output.json"]`
+  - To destroy your Aiven PostgreSQL instance: `["-c", "terraform destroy -auto-approve -no-color"]`
