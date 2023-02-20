@@ -15,7 +15,7 @@ provider "aiven" {
 
 resource "aiven_pg" "pg_instance" {
   project                 = var.aiven_project_name
-  cloud_name              = "google-europe-west1"
+  cloud_name              = "aws-us-east-2"
   plan                    = "startup-4"
   # make the service name unique by adding a suffix based on the first digit of the Qovery environment ID
   service_name            = "pg-${split("-", var.qovery_environment_id)[0]}"
